@@ -2,18 +2,14 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  // State to store tasks
   const [tasks, setTasks] = useState([]);
   const [input, setInput] = useState("");
-
-  // Add new task
   const addTask = () => {
     if (input.trim() === "") return;
     setTasks([...tasks, input]);
     setInput("");
   };
 
-  // Delete task by index
   const deleteTask = (index) => {
     setTasks(tasks.filter((_, i) => i !== index));
   };
